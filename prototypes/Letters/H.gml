@@ -3,25 +3,25 @@ graph [
   node [
     id 0
     label 0
-      coord 0.25
+      coord 0.1
       coord 0
   ]
   node [
     id 1
     label 1
-      coord 0.25
+      coord 0.1
       coord 2
   ]
   node [
     id 2
     label 2
-      coord 1.75
+      coord 0.9
       coord 0
   ]
   node [
     id 3
     label 3
-      coord 1.75
+      coord 0.9
       coord 2
   ]
   node [
@@ -33,7 +33,7 @@ graph [
   node [
     id 5
     label 5
-      coord 2
+      coord 1
       coord 1
   ]
   edge [

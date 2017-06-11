@@ -9,13 +9,13 @@ graph [
   node [
     id 1
     label 1
-      coord 1
+      coord 0.5
       coord 0
   ]
   node [
     id 2
     label 2
-      coord 2
+      coord 1
       coord 2
   ]
   edge [

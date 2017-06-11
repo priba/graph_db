@@ -15,19 +15,19 @@ graph [
   node [
     id 2
     label 2
-      coord 2
+      coord 1
       coord 2
   ]
   node [
     id 3
     label 3
-      coord 2
+      coord 1
       coord 0
   ]
   node [
     id 4
     label 4
-      coord 1
+      coord 0.8
       coord 1
   ]
   node [

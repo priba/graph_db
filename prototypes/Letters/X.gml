@@ -9,7 +9,7 @@ graph [
   node [
     id 1
     label 1
-      coord 2
+      coord 1
       coord 2
   ]
   node [
@@ -21,7 +21,7 @@ graph [
   node [
     id 3
     label 3
-      coord 2
+      coord 1
       coord 0
   ]
   edge [
