@@ -3,7 +3,7 @@ graph [
   node [
     id 0
     label 0
-      coord 0
+      coord 1
       coord 0
   ]
   node [
@@ -15,20 +15,14 @@ graph [
   node [
     id 2
     label 2
-      coord 2
       coord 0
+      coord 1.75
   ]
   node [
     id 3
     label 3
-      coord 0.25
-      coord 1
-  ]
-  node [
-    id 4
-    label 4
+      coord 2
       coord 1.75
-      coord 1
   ]
   edge [
     source 0
@@ -36,13 +30,8 @@ graph [
     weight 1
   ]
   edge [
-    source 1
-    target 2
-    weight 1
-  ]
-  edge [
-    source 3
-    target 4
+    source 2
+    target 3
     weight 1
   ]
 ]

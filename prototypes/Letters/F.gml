@@ -3,13 +3,13 @@ graph [
   node [
     id 0
     label 0
-      coord 0
+      coord 0.25
       coord 0
   ]
   node [
     id 1
     label 1
-      coord 0
+      coord 0.25
       coord 2
   ]
   node [
@@ -27,7 +27,7 @@ graph [
   node [
     id 4
     label 4
-      coord -0.1
+      coord 0
       coord 1
   ]
   edge [

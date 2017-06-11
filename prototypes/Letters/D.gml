@@ -15,7 +15,7 @@ graph [
   node [
     id 2
     label 2
-      coord 2
+      coord 1
       coord 1
   ]
   edge [

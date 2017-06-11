@@ -18,8 +18,3 @@ Prototypes of capital letters.
 | K  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/K.png" width="200"> | | X  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/X.png" width="200"> |
 | L  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/L.png" width="200"> | | Y  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/Y.png" width="200"> |
 | M  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/M.png" width="200"> | | Z  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/Z.png" width="200"> |
-edge [
-    source 0
-    target 3
-    weight 1
-  ]
