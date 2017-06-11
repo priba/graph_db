@@ -1,5 +1,5 @@
 graph [
-  class "A"
+  class "G"
   node [
     id 0
     label 0
