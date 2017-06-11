@@ -5,5 +5,5 @@ Prototypes used to generate the whole dataset.
 
 | Letter  | Image |
 | ------------- | ------------- |
-| A  | ![A](https://github.com/priba/graph_db/blob/master/prototypes/A.png?raw=true =250x)  |
-| B  | ![B](https://github.com/priba/graph_db/blob/master/prototypes/B.png?raw=true) |
+| A  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/A.png" width="200">   |
+| B  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/B.png" width="200"> |
