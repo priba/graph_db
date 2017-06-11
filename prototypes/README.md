@@ -1,3 +1,9 @@
-# Graph Database
+# Graph Database: Prototypes
 
-Synthetic graph database generation. Each class is generated with a prototype and afterwards distortions are applied.
+Prototypes used to generate the whole dataset.
+
+
+| Letter  | Image |
+| ------------- | ------------- |
+| A  | ![Alt text]()  |
+| B  | ![Alt text]() |
