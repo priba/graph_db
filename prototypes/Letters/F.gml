@@ -1,5 +1,5 @@
 graph [
-  class "G"
+  class "F"
   node [
     id 0
     label 0
@@ -9,25 +9,25 @@ graph [
   node [
     id 1
     label 1
-      coord 1
+      coord 0
       coord 2
   ]
   node [
     id 2
     label 2
       coord 2
-      coord 0
+      coord 2
   ]
   node [
     id 3
     label 3
-      coord 0.25
+      coord 1
       coord 1
   ]
   node [
     id 4
     label 4
-      coord 1.75
+      coord -0.1
       coord 1
   ]
   edge [
