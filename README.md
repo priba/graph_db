@@ -12,8 +12,9 @@ Controlled by __--nodeThreshold__ parameter, increase the number of nodes of the
 
 Some examples with graph A:
 
-Original graph:
-<img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/A.png" width="200">
+|Original graph |
+| ------------- |
+|<img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/A.png" width="200">|
 
 | --nodeThreshold  | Image | | --nodeThreshold  | Image |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
