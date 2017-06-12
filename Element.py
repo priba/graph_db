@@ -3,6 +3,8 @@ from __future__ import division
 import networkx as nx
 import numpy as np
 
+from Plotter import plot_graph
+
 class Element:
     def __init__(self, f_name):
         self.el = nx.read_gml(f_name)

@@ -7,8 +7,8 @@ import os
 parser = argparse.ArgumentParser(description='Generate a dataset from a given prototype folder.')
 
 # Prototypes
-parser.add_argument('--dirPrototypes', help='prototype folder', default=['./prototypes/Letters/', './prototypes/Digits/'])
-parser.add_argument('--nodeThreshold', help='prototypes node threshold', default=0.4)
+parser.add_argument('--dirPrototypes', help='prototype folder', default=['./prototypes/Letters/'])
+parser.add_argument('--nodeThreshold', help='prototypes node threshold', default=None)
 
 # Dataset
 parser.add_argument('--dirDataset', help='dataset folder', default='./dataset/Letters/')
