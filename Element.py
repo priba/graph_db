@@ -11,8 +11,7 @@ class Element:
         self.label = self.el.graph['class']
 
     def distort(self):
-        # TODO
-        pass
+        return self.el
 
     def add_nodes(self, d):
 
