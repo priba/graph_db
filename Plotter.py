@@ -2,6 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def plot_graph(g, show=False, save_path=''):
     fig = plt.figure()
     position = {k: v['coord'] for k, v in g.node.items()}

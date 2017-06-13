@@ -10,11 +10,11 @@ Synthetic graph database generation. Each class is generated with a prototype an
 
 Controlled by __--nodeThreshold__ parameter, increase the number of nodes of the prototypes before the deformation. It tries to add a node at the specified distance, equispaced following the edges.
 
-Some examples with graph A:
+Some examples with graph A normalized before and after adding the nodes:
 
 |Original graph |
 | ------------- |
-|<img src="https://github.com/priba/graph_db/blob/master/prototypes/Letters/A.png" width="200">|
+|<img src="https://github.com/priba/graph_db/blob/master/readme_plots/A.png" width="200">|
 
 | --nodeThreshold  | Image | | --nodeThreshold  | Image |
 | ------------- | ------------- | ------------- | ------------- | ------------- |

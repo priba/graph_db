@@ -3,18 +3,18 @@ from __future__ import division
 import networkx as nx
 import numpy as np
 
-from Plotter import plot_graph
 
 class Element:
     def __init__(self, f_name):
-        self.el = nx.read_gml(f_name)
+        self.el = self.normalize(nx.read_gml(f_name))
         self.label = self.el.graph['class']
 
-    def getLabel(self):
+    def get_label(self):
         return self.label
 
     def distort(self):
-        return self.el
+        g = self.el
+        return self.normalize(g)
 
     def add_nodes(self, d):
 
@@ -42,4 +42,21 @@ class Element:
                 g.add_edge(len(g.node)-2, len(g.node)-1)
 
             g.add_edge(len(g.node) - 1, t)
-        self.el = g
+        self.el = self.normalize(g)
+
+    @staticmethod
+    def normalize(g):
+        coord = [v['coord'] for k, v in g.nodes(data=True)]
+        coord = np.array(coord)
+        g.graph['mean'] = np.mean(coord, axis=0).tolist()
+        g.graph['std'] = np.std(coord, axis=0).tolist()
+
+        for k, v in g.nodes(data=True):
+            g.node[k]['coord'] -= np.array(g.graph['mean'])
+
+            # Find all indices of std = 0
+            std = [x if x != 0 else 1 for x in g.graph['std']]
+            g.node[k]['coord'] = g.node[k]['coord'] / std
+            g.node[k]['coord'] = g.node[k]['coord'].tolist()
+
+        return g

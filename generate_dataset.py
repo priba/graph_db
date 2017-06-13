@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser(description='Generate a dataset from a given pr
 
 # Prototypes
 parser.add_argument('--dirPrototypes', help='prototype folder', default=['./prototypes/Letters/'])
-parser.add_argument('--nodeThreshold', help='prototypes node threshold', default=None)
+parser.add_argument('--nodeThreshold', help='prototypes node threshold', default=0.4)
 
 # Dataset
 parser.add_argument('--dirDataset', help='dataset folder', default='./dataset/Letters/')
@@ -24,22 +24,6 @@ parser.add_argument('--unbalanced', action='store_true', default=False, help='Un
 
 args = parser.parse_args()
 
-
-def normalize(g):
-    coord = [v['coord'] for k, v in g.nodes(data=True)]
-    coord = np.array(coord)
-    g.graph['mean'] = np.mean(coord, axis=0).tolist()
-    g.graph['std'] = np.std(coord, axis=0).tolist()
-
-    for k, v in g.nodes(data=True):
-        g.node[k]['coord'] -= np.array(g.graph['mean'])
-
-        # Find all indices of std = 0
-        std = [x if x != 0 else 1 for x in g.graph['std']]
-        g.node[k]['coord'] = g.node[k]['coord']/std
-        g.node[k]['coord'] = g.node[k]['coord'].tolist()
-
-    return g
 
 if __name__ == '__main__':
 
@@ -79,5 +63,4 @@ if __name__ == '__main__':
         for s in range(len(f_set)):
             for sample in range(int(examples_x_class[s][i])):
                 g = el.distort()
-                g = normalize(g)
-                nx.write_gml(g, args.dirDataset+f_set[s]+str(sample)+'_'+el.getLabel()+'.gml')
+                nx.write_gml(g, args.dirDataset+f_set[s]+str(sample)+'_'+el.get_label()+'.gml')
