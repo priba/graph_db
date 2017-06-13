@@ -10,6 +10,9 @@ class Element:
         self.el = nx.read_gml(f_name)
         self.label = self.el.graph['class']
 
+    def getLabel(self):
+        return self.label
+
     def distort(self):
         return self.el
 
