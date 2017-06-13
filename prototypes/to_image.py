@@ -14,9 +14,7 @@ args = parser.parse_args()
 if __name__ == '__main__':
     files = glob.glob(args.dir + '*.gml')
     for f in files:
-        try:
-            g = nx.read_gml(f)
-            base = os.path.splitext(f)[0]
-            plot_graph(g, save_path=base+'.png')
-        except:
-            a=1
+        g = nx.read_gml(f)
+        base = os.path.splitext(f)[0]
+        plot_graph(g, save_path=base+'.png')
+

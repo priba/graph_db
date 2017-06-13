@@ -7,8 +7,8 @@ def plot_graph(g, show=False, save_path=''):
     fig = plt.figure()
     position = {k: v['coord'] for k, v in g.node.items()}
 
-    center = np.mean(position.values(),axis=0)
-    max_pos = np.max(np.abs(position.values()-center))
+    center = np.mean(list(position.values()),axis=0)
+    max_pos = np.max(np.abs(list(position.values())-center))
 
     nx.draw(g, pos=position)
 

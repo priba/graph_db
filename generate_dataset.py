@@ -16,7 +16,7 @@ parser.add_argument('--nodeThreshold', help='prototypes node threshold', default
 
 # Dataset
 parser.add_argument('--dirDataset', help='dataset folder', default='./dataset/Letters/')
-parser.add_argument('--division', help='division (tr, val, te)', default=[1000, 1000, 1000])
+parser.add_argument('--division', help='division (tr, val, te)', default=[300, 300, 300])
 parser.add_argument('--unbalanced', action='store_true', default=False, help='Unbalanced database')
 
 # Distortion Node
