@@ -3,17 +3,69 @@ from __future__ import division
 import networkx as nx
 import numpy as np
 
+import random
+from itertools import compress
 
 class Element:
     def __init__(self, f_name):
         self.el = self.normalize(nx.read_gml(f_name))
         self.label = self.el.graph['class']
+        self.displace_node_std = 0
+        self.add_node_std = 0
+        self.add_edge_prob = 0
+        self.rm_edge_prob = 0
+        self.edge_connection = 0
+        self.max_edge = 0
 
     def get_label(self):
         return self.label
 
+    def set_distortion(self, displace_node_std, add_node_std, max_edge, add_edge_prob, rm_edge_prob, edge_connection):
+        # Node
+        self.displace_node_std = displace_node_std
+        self.add_node_std = add_node_std
+
+        # Edge
+        self.max_edge = max_edge
+        self.add_edge_prob = add_edge_prob
+        self.rm_edge_prob = rm_edge_prob
+        self.edge_connection = edge_connection
+
     def distort(self):
-        g = self.el
+        g = self.el.copy()
+
+        # Distort nodes
+        for k in g.nodes():
+            g.node[k]['coord'] = g.node[k]['coord'] + np.random.normal(0, self.displace_node_std, len(g.node[k]['coord']))
+            g.node[k]['coord'] = g.node[k]['coord'].tolist()
+
+        # Add edges
+        num_edges = np.random.uniform(0,1,self.max_edge)
+        num_edges = np.sum(num_edges < self.add_edge_prob)
+
+        for i in range(num_edges):
+
+            s = random.choice(g.nodes())
+            if np.random.uniform(0,1,1) < self.edge_connection:
+                nodes_g = g.nodes()
+                nodes_g.remove(s)
+                t = random.choice(nodes_g)
+            else:
+                t = len(g.nodes())
+                g.add_node(t, {'coord': g.node[s]['coord'] + np.random.normal(0, self.add_node_std, len(g.node[s]['coord']))})
+            g.add_edge(s, t, {'weight': 1})
+
+        # Remove edges
+        rm_edges_prob = np.random.uniform(0, 1, len(g.edges()))
+        rm_edges = rm_edges_prob < self.rm_edge_prob
+        if np.sum(rm_edges) == len(g.edges()):
+            rm_edges[np.argmax(rm_edges)] = False
+
+        g.remove_edges_from(list(compress(g.edges(), rm_edges)))
+
+        # Remove isolated nodes
+        g.remove_nodes_from(nx.isolates(g))
+
         return self.normalize(g)
 
     def add_nodes(self, d):

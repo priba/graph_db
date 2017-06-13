@@ -12,15 +12,23 @@ parser = argparse.ArgumentParser(description='Generate a dataset from a given pr
 
 # Prototypes
 parser.add_argument('--dirPrototypes', help='prototype folder', default=['./prototypes/Letters/'])
-parser.add_argument('--nodeThreshold', help='prototypes node threshold', default=0.4)
+parser.add_argument('--nodeThreshold', help='prototypes node threshold', default=None)
 
 # Dataset
 parser.add_argument('--dirDataset', help='dataset folder', default='./dataset/Letters/')
-parser.add_argument('--division', help='division (tr, val, te)', default=[26, 26, 26])
-parser.add_argument('--unbalanced', action='store_true', default=False, help='Unalanced dataset')
+parser.add_argument('--division', help='division (tr, val, te)', default=[1000, 1000, 1000])
+parser.add_argument('--unbalanced', action='store_true', default=False, help='Unbalanced database')
 
-# Distortion
-# TODO
+# Distortion Node
+parser.add_argument('--nodeDisplace', help='node std for distort its position', default=0.1)
+parser.add_argument('--nodeAdd', help='node std for adding in a source neighbourhood', default=0.8)
+
+# Distortion Edge
+parser.add_argument('--edgeMaximum', help='maximum number of new edges', default=8)
+parser.add_argument('--addEdge', help='probability to add new edge', default=0.1)
+parser.add_argument('--rmEdge', help='probability to remove new edge', default=0.1)
+parser.add_argument('--edgeConnection', help='new edge connected to existing node', default=0.75)
+
 
 args = parser.parse_args()
 
@@ -52,14 +60,20 @@ if __name__ == '__main__':
         # Number of examples
         examples_x_class = np.ceil(examples_x_class * np.array(args.division)[:, None])
     else:
+        # Balanced distribution of nodes
         examples_x_class = np.tile(np.ceil(np.array(args.division) / num_class)[:,None], (1,num_class))
 
+    # Iterate class prototypes
     for i in range(num_class):
         el = Element(proto_files[i])
 
+        el.set_distortion(args.nodeDisplace, args.nodeAdd, args.edgeMaximum, args.addEdge, args.rmEdge, args.edgeConnection)
+
+        # Add nodes if necessary
         if args.nodeThreshold is not None:
             el.add_nodes(args.nodeThreshold)
 
+        # Create the dataset samples for each set (train, validation, test)
         for s in range(len(f_set)):
             for sample in range(int(examples_x_class[s][i])):
                 g = el.distort()
