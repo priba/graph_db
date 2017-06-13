@@ -52,3 +52,19 @@ Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDis
 | 0.10 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075.png" width="200">  | | 0.10 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_05.png" width="200">  |
 | 0.25 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_025_075.png" width="200"> | | 0.25 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_025_05.png" width="200"> |
 | 0.50 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_05_075.png" width="200">  | | 0.50 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_05_05.png" width="200">  |
+
+
+## Remove edge
+
+Controlled by __--rmEdge__ parameter, removes randomly edges with probability --rmEdge, however, at least one edge shall be kept.
+
+Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDisplace 0.10, --edgeMaximum 10, --nodeAdd 0.8, --addEdge 0.1 and --edgeConnection 0.75.
+
+|Original graph |
+| ------------- |
+|<img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075.png" width="200">|
+
+| --nodeDisplace  | Image | | --nodeDisplace  | Image |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 0.01  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_001.png" width="200"> | | 0.05 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_005.png" width="200"> |
+| 0.10   | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_02.png" width="200"> |
