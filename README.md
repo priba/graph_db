@@ -18,14 +18,14 @@ Some examples with graph A normalized before and after adding the nodes:
 
 | --nodeThreshold  | Image | | --nodeThreshold  | Image |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 0.1  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_01.png" width="200"> | | 0.2 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_02.png" width="200"> |
-| 0.3  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_03.png" width="200"> | | 0.4 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04.png" width="200"> |
+| 0.10  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_02.png" width="200"> |
+| 0.30  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_03.png" width="200"> | | 0.40 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04.png" width="200"> |
 
 ## Node distortion
 
 Controlled by __--nodeDisplace__ parameter, add random noise following a normal distribution center at each node with standard deviation set by --nodeDisplace.
 
-Some examples with graph A where --nodeThreshold has been set to 0.4.
+Some examples with graph A where --nodeThreshold has been set to 0.40.
 
 |Original graph |
 | ------------- |
@@ -34,4 +34,21 @@ Some examples with graph A where --nodeThreshold has been set to 0.4.
 | --nodeDisplace  | Image | | --nodeDisplace  | Image |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0.01  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_001.png" width="200"> | | 0.05 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_005.png" width="200"> |
-| 0.1   | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01.png" width="200"> | | 0.2 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_02.png" width="200"> |
+| 0.10   | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_02.png" width="200"> |
+
+## Insert edges
+
+Controlled by __--edgeMaximum__ parameter, __--addEdge__, __--edgeConnection__ and __--nodeAdd__, adds at most --edgeMaximum edges with probability --addEdge. The source node is always a existing node in the graph, the target node is an existing one with probability --edgeConnection. If a new node is add, it is created in a neighbourhood with standard deviation --nodeAdd.
+
+Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDisplace 0.10, --edgeMaximum 10 and --nodeAdd 0.8.
+
+|Original graph |
+| ------------- |
+|<img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01.png" width="200">|
+
+| --addEdge  | --edgeConnection  | Image | | --addEdge  |  --edgeConnection  | Image |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| 0.05 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_005_075.png" width="200"> | | 0.05 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_005_05.png" width="200"> |
+| 0.10 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075.png" width="200">  | | 0.10 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_05.png" width="200">  |
+| 0.25 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_025_075.png" width="200"> | | 0.25 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_025_05.png" width="200"> |
+| 0.50 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_05_075.png" width="200">  | | 0.50 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_05_05.png" width="200">  |
