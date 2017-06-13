@@ -64,7 +64,7 @@ Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDis
 | ------------- |
 |<img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075.png" width="200">|
 
-| --nodeDisplace  | Image | | --nodeDisplace  | Image |
+| --rmEdge  | Image | | --rmEdge  | Image |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0.01  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_001.png" width="200"> | | 0.05 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_005.png" width="200"> |
 | 0.10   | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_02.png" width="200"> |
