@@ -3,7 +3,7 @@
 Prototypes of digits 0 to 9.
 
 
-| Letter  | Image | | Letter  | Image |
+| Digit  | Image | | Digit  | Image |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Digits/0.png" width="200"> | | 5  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Digits/5.png" width="200"> |
 | 1  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Digits/1.png" width="200"> | | 6  | <img src="https://github.com/priba/graph_db/blob/master/prototypes/Digits/6.png" width="200"> |
