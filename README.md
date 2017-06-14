@@ -165,3 +165,8 @@ Different levels of distortion for graph A with --nodeThreshold 0.4.
 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/0_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/1_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/2_A.png" width="200"> |
 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/3_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/4_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/5_A.png" width="200"> |
 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/6_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/7_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/8_A.png" width="200"> |
+
+## Authors
+
+* [Pau Riba](http://www.cvc.uab.es/people/priba/) ([@priba](https://github.com/priba))
+* [Anjan Dutta](https://sites.google.com/site/2adutta/) ([@AnjanDutta](https://github.com/AnjanDutta))
