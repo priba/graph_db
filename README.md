@@ -68,3 +68,53 @@ Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDis
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0.01  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_001.png" width="200"> | | 0.05 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_005.png" width="200"> |
 | 0.10   | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_01_075_02.png" width="200"> |
+
+
+## Some Examples
+
+Different levels of distortion
+
+### LOW
+
+* --nodeDisplace 0.05
+* --nodeAdd 0.4
+* --edgeMaximum 8
+* --addEdge 0.1
+* --rmEdge 0.05
+* --edgeConnection 0.75
+
+| Image | Image | Image |
+| ------------- | ------------- | ------------- |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/0_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/1_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/2_A.png" width="200"> |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/3_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/4_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/5_A.png" width="200"> |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/6_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/7_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/LOW/8_A.png" width="200"> |
+
+### MEDIUM
+
+* --nodeDisplace 0.1
+* --nodeAdd 0.5
+* --edgeMaximum 10
+* --addEdge 0.1
+* --rmEdge 0.05
+* --edgeConnection 0.6
+
+| Image | Image | Image |
+| ------------- | ------------- | ------------- |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/0_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/1_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/2_A.png" width="200"> |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/3_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/4_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/5_A.png" width="200"> |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/6_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/7_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/MED/8_A.png" width="200"> |
+
+### HIGH
+
+* --nodeDisplace 0.2
+* --nodeAdd 0.8
+* --edgeMaximum 10
+* --addEdge 0.25
+* --rmEdge 0.05
+* --edgeConnection 0.6
+
+| Image | Image | Image |
+| ------------- | ------------- | ------------- |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/0_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/1_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/2_A.png" width="200"> |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/3_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/4_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/5_A.png" width="200"> |
+| <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/6_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/7_A.png" width="200"> | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/HIGH/8_A.png" width="200"> |
