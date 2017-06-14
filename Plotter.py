@@ -13,6 +13,7 @@ import numpy as np
 __author__ = "Pau Riba, Anjan Dutta"
 __email__ = "priba@cvc.uab.cat, adutta@cvc.uab.cat"
 
+
 def plot_graph(g, show=False, save_path=''):
     fig = plt.figure()
     position = {k: v['coord'] for k, v in g.node.items()}

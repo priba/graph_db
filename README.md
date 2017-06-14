@@ -1,12 +1,51 @@
 # Graph Database
 
-Synthetic graph database generation. Each class is generated with a prototype and afterwards distortions are applied.
+Synthetic graph database generation. Each class is generated with a prototype and afterwards distortions are applied. To run the default example:
 
     $ pip install -r requirements.txt
-    $ python generate_dataset.py --dirPrototypes ['./prototypes/Letters/'] --nodeThreshold 0.4  
-       --dirDataset './dataset/Letters/' --division (5000, 3000, 3000)
-    
-## Add nodes
+    $ python generate_dataset.py
+
+## Usage
+
+Usage of __generate_dataset.py__ script:
+
+```
+usage: generate_dataset.py [-h] [--dirPrototypes DIRPROTOTYPES]
+                           [--nodeThreshold NODETHRESHOLD]
+                           [--dirDataset DIRDATASET] [--division DIVISION]
+                           [--unbalanced] [--nodeDisplace NODEDISPLACE]
+                           [--nodeAdd NODEADD] [--edgeMaximum EDGEMAXIMUM]
+                           [--addEdge ADDEDGE] [--rmEdge RMEDGE]
+                           [--edgeConnection EDGECONNECTION]
+
+Generate a dataset from a given prototype folder.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --dirPrototypes DIRPROTOTYPES
+                        prototype folder
+  --nodeThreshold NODETHRESHOLD
+                        prototypes node threshold
+  --dirDataset DIRDATASET
+                        dataset folder
+  --division DIVISION   division (tr, val, te)
+  --unbalanced          Unbalanced database
+  --nodeDisplace NODEDISPLACE
+                        node std for distort its position
+  --nodeAdd NODEADD     node std for adding a node in a source neighbourhood
+  --edgeMaximum EDGEMAXIMUM
+                        maximum number of new edges that can be added
+  --addEdge ADDEDGE     probability to add new edge
+  --rmEdge RMEDGE       probability to remove an edge
+  --edgeConnection EDGECONNECTION
+                        probability new edge is connected to an existing node
+```
+
+## Parameter discussion
+
+Evaluation on the effect of the proposed parameters.
+
+### Add nodes
 
 Controlled by __--nodeThreshold__ parameter, increase the number of nodes of the prototypes before the deformation. It tries to add a node at the specified distance, equispaced following the edges.
 
@@ -21,7 +60,7 @@ Some examples with graph A normalized before and after adding the nodes:
 | 0.10  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_02.png" width="200"> |
 | 0.30  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_03.png" width="200"> | | 0.40 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04.png" width="200"> |
 
-## Node distortion
+### Node distortion
 
 Controlled by __--nodeDisplace__ parameter, add random noise following a normal distribution center at each node with standard deviation set by --nodeDisplace.
 
@@ -36,7 +75,7 @@ Some examples with graph A where --nodeThreshold has been set to 0.40.
 | 0.01  | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_001.png" width="200"> | | 0.05 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_005.png" width="200"> |
 | 0.10   | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01.png" width="200"> | | 0.20 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_02.png" width="200"> |
 
-## Insert edges
+### Insert edges
 
 Controlled by __--edgeMaximum__ parameter, __--addEdge__, __--edgeConnection__ and __--nodeAdd__, adds at most --edgeMaximum edges with probability --addEdge. The source node is always a existing node in the graph, the target node is an existing one with probability --edgeConnection. If a new node is add, it is created in a neighbourhood with standard deviation --nodeAdd.
 
@@ -54,7 +93,7 @@ Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDis
 | 0.50 | 0.75 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_05_075.png" width="200">  | | 0.50 | 0.50 | <img src="https://github.com/priba/graph_db/blob/master/readme_plots/A_04_01_05_05.png" width="200">  |
 
 
-## Remove edge
+### Remove edge
 
 Controlled by __--rmEdge__ parameter, removes randomly edges with probability --rmEdge, however, at least one edge shall be kept.
 
@@ -72,7 +111,7 @@ Some examples with graph A where --nodeThreshold has been set to 0.40, --nodeDis
 
 ## Some Examples
 
-Different levels of distortion
+Different levels of distortion for graph A with --nodeThreshold 0.4.
 
 ### LOW
 
