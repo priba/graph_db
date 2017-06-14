@@ -47,7 +47,7 @@ Prototypes folder contains prototypes to generate different dataset and also com
 
     $ --dirPrototypes ['./prototypes/Letters/', './prototypes/Digits/']
 
-The  proposed prototypes can be found [here](https://github.com/priba/graph_db/blob/master/prototypes/README.md).
+The  proposed prototypes can be found [here](./prototypes/README.md).
 
 ## Parameter discussion
 
