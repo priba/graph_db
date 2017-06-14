@@ -4,7 +4,7 @@ Synthetic graph database generation. Each class is generated with a prototype an
 
     $ pip install -r requirements.txt
     $ python generate_dataset.py
-
+    
 ## Usage
 
 Usage of __generate_dataset.py__ script:
@@ -40,6 +40,14 @@ optional arguments:
   --edgeConnection EDGECONNECTION
                         probability new edge is connected to an existing node
 ```
+
+## Prototypes
+
+Prototypes folder contains prototypes to generate different dataset and also combinations:
+
+    $ --dirPrototypes ['./prototypes/Letters/', './prototypes/Digits/']
+
+The  proposed prototypes can be found [here](https://github.com/priba/graph_db/blob/master/prototypes/README.md).
 
 ## Parameter discussion
 
