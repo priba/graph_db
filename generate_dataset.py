@@ -41,14 +41,9 @@ parser.add_argument('--nodeAdd', help='node std for adding a node in a source ne
 # Distortion Edge
 parser.add_argument('--edgeMaximum', help='maximum number of new edges that can be added', default=8)
 parser.add_argument('--addEdge', help='probability to add new edge', default=0.1)
-<<<<<<< HEAD
+
 parser.add_argument('--rmEdge', help='probability to new edge', default=0.1)
 parser.add_argument('--edgeConnection', help='new edge connected to existing node', default=0.75)
-
-=======
-parser.add_argument('--rmEdge', help='probability to remove an edge', default=0.1)
-parser.add_argument('--edgeConnection', help='probability new edge is connected to an existing node', default=0.75)
->>>>>>> 8e9d650825c2e55037052c0feb1c177246f76217
 
 args = parser.parse_args()
 
