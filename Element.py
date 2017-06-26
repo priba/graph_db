@@ -66,6 +66,9 @@ class Element:
         # Remove isolated nodes
         g.remove_nodes_from(nx.isolates(g))
 
+        # Relabel the nodes accordingly
+        g = nx.convert_node_labels_to_integers(g)
+
         return self.normalize(g)
 
     def add_nodes(self, d):
