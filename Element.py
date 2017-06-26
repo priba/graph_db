@@ -1,3 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""
+    Element.py
+    Class which stores a graph and applies distortions to it.
+"""
+
 from __future__ import division
 
 import networkx as nx
@@ -5,6 +13,10 @@ import numpy as np
 
 import random
 from itertools import compress
+
+__author__ = "Pau Riba, Anjan Dutta"
+__email__ = "priba@cvc.uab.cat, adutta@cvc.uab.cat"
+
 
 class Element:
     def __init__(self, f_name):

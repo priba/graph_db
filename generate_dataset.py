@@ -1,13 +1,28 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""
+    generate_dataset.py
+    Generates a dataset providing a set of prototypes. These prototypes are then distorted to generate new elements of the class.
+"""
+
 from __future__ import division
 
 import argparse
 import glob
-import networkx as nx
-from Element import Element
 import shutil
 import os
+
+import networkx as nx
 import numpy as np
 
+# Our Modules
+from Element import Element
+
+__author__ = "Pau Riba, Anjan Dutta"
+__email__ = "priba@cvc.uab.cat, adutta@cvc.uab.cat"
+
+# Argument parser
 parser = argparse.ArgumentParser(description='Generate a dataset from a given prototype folder.')
 
 # Prototypes
@@ -21,17 +36,21 @@ parser.add_argument('--unbalanced', action='store_true', default=False, help='Un
 
 # Distortion Node
 parser.add_argument('--nodeDisplace', help='node std for distort its position', default=0.1)
-parser.add_argument('--nodeAdd', help='node std for adding in a source neighbourhood', default=0.8)
+parser.add_argument('--nodeAdd', help='node std for adding a node in a source neighbourhood', default=0.8)
 
 # Distortion Edge
-parser.add_argument('--edgeMaximum', help='maximum number of new edges', default=8)
+parser.add_argument('--edgeMaximum', help='maximum number of new edges that can be added', default=8)
 parser.add_argument('--addEdge', help='probability to add new edge', default=0.1)
+<<<<<<< HEAD
 parser.add_argument('--rmEdge', help='probability to new edge', default=0.1)
 parser.add_argument('--edgeConnection', help='new edge connected to existing node', default=0.75)
 
+=======
+parser.add_argument('--rmEdge', help='probability to remove an edge', default=0.1)
+parser.add_argument('--edgeConnection', help='probability new edge is connected to an existing node', default=0.75)
+>>>>>>> 8e9d650825c2e55037052c0feb1c177246f76217
 
 args = parser.parse_args()
-
 
 if __name__ == '__main__':
 
@@ -52,6 +71,7 @@ if __name__ == '__main__':
         proto_files += glob.glob(args.dirPrototypes[i] + '*.gml')
     num_class = len(proto_files)
 
+    # Balanced or unbalanced dataset
     if args.unbalanced:
         # Random Distribution
         examples_x_class = np.random.random((3, num_class))
@@ -67,14 +87,17 @@ if __name__ == '__main__':
     for i in range(num_class):
         el = Element(proto_files[i])
 
-        el.set_distortion(args.nodeDisplace, args.nodeAdd, args.edgeMaximum, args.addEdge, args.rmEdge, args.edgeConnection)
+        # Define distortions
+        el.set_distortion(args.nodeDisplace, args.nodeAdd, args.edgeMaximum, args.addEdge, args.rmEdge,
+                          args.edgeConnection)
 
         # Add nodes if necessary
         if args.nodeThreshold is not None:
             el.add_nodes(args.nodeThreshold)
 
-        # Create the dataset samples for each set (train, validation, test)
+        # For each set (train, validation, test)
         for s in range(len(f_set)):
+            # Apply random distortion to generate each element
             for sample in range(int(examples_x_class[s][i])):
                 g = el.distort()
                 nx.write_gml(g, args.dirDataset+f_set[s]+str(sample)+'_'+el.get_label()+'.gml')
