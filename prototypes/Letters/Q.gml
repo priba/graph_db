@@ -36,6 +36,12 @@ graph [
       coord 1
       coord 0
   ]
+  node [
+    id 6
+    label 6
+      coord 0.75
+      coord 0.5
+  ]
   edge [
     source 0
     target 1
@@ -53,12 +59,22 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 6
+    weight 1
+  ]
+  edge [
+    source 3
+    target 6
     weight 1
   ]
   edge [
     source 4
-    target 5
+    target 6
+    weight 1
+  ]
+  edge [
+    source 5
+    target 6
     weight 1
   ]
 ]

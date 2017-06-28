@@ -24,14 +24,30 @@ graph [
       coord 1
       coord 0
   ]
+  node [
+    id 4
+    label 4
+      coord 0.5
+      coord 1
+  ]
   edge [
     source 0
-    target 1
+    target 4
+    weight 1
+  ]
+  edge [
+    source 1
+    target 4
     weight 1
   ]
   edge [
     source 2
-    target 3
+    target 4
+    weight 1
+  ]
+  edge [
+    source 3
+    target 4
     weight 1
   ]
 ]

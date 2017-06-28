@@ -21,23 +21,33 @@ graph [
   node [
     id 3
     label 3
-      coord 0.1
+      coord 0.25
       coord 1
   ]
   node [
     id 4
     label 4
-      coord 0.9
+      coord 0.75
       coord 1
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 1
   ]
   edge [
     source 1
-    target 2
+    target 3
+    weight 1
+  ]
+  edge [
+    source 1
+    target 4
+    weight 1
+  ]
+  edge [
+    source 2
+    target 4
     weight 1
   ]
   edge [
