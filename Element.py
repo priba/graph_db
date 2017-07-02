@@ -88,6 +88,9 @@ class Element:
         # Create a new graph
         g = nx.Graph()
 
+        # Save class
+        g.graph['class'] = self.label
+
         # Initialize the nodes given by the prototype
         g.add_nodes_from(self.el.nodes(data=True))
 
