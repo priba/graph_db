@@ -105,13 +105,13 @@ class Element:
 
             # Add first node
             g.add_node(len(g.node), {'coord': (inc * diff_coord + self.el.node[s]['coord']).tolist()})
-            g.add_edge(s, len(g.node)-1)
+            g.add_edge(s, len(g.node)-1, w)
 
             for i in range(2, node_to_add):
                 g.add_node(len(g.node), {'coord': (i*inc*diff_coord + self.el.node[s]['coord']).tolist()})
-                g.add_edge(len(g.node)-2, len(g.node)-1)
+                g.add_edge(len(g.node)-2, len(g.node)-1, w)
 
-            g.add_edge(len(g.node) - 1, t)
+            g.add_edge(len(g.node) - 1, t, w)
         self.el = self.normalize(g)
 
     @staticmethod
